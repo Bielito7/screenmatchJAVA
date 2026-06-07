@@ -1,26 +1,25 @@
-public class Filme {
-    String nome;
-    int anoDeLancamento;
-    boolean incluidoNoPlano;
-    private double somaDasAvaliacoes;
-    private int qtdAvaliacoes;
-    int duracaoMin;
+package screenmatch.modelos;
 
-    void exibeFichaTecnica() {
-        System.out.println("Nome do filme: " + nome);
-        System.out.println("Ano de lançamento: " + anoDeLancamento);
+import screenmatch.calculo.Classificar;
+
+public class Filme extends Titulo implements Classificar {
+    private String diretor;
+
+    public String getDiretor() {
+        return diretor;
     }
 
-    void avalia(double nota) {
-        somaDasAvaliacoes += nota;
-        qtdAvaliacoes++;
+    public void setDiretor(String diretor) {
+        this.diretor = diretor;
     }
 
-    double mediaDasAvaliacoes(){
-        return somaDasAvaliacoes / qtdAvaliacoes;
+    @Override
+    public int getClassificacao() {
+        return (int) mediaDasAvaliacoes() / 2;
     }
 
-    int getQtdAvaliacoes() {
-        return qtdAvaliacoes;
+    @Override
+    public String toString() {
+        return "Filme: " + this.getNome() + "(" + this.getAnoDeLancamento() + ")";
     }
 }

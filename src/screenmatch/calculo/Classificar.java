@@ -1,4 +1,5 @@
 package screenmatch.calculo;
 
-public class Classificar {
+public interface Classificar {
+    int getClassificacao();
 }
