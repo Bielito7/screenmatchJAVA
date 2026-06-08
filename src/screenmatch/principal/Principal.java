@@ -1,3 +1,5 @@
+package screenmatch.principal;
+
 import screenmatch.calculo.CalculadoraDeTempo;
 import screenmatch.calculo.FiltroRecomendacao;
 import screenmatch.modelos.Episodio;
@@ -8,9 +10,9 @@ import java.util.ArrayList;
 
 public class Principal {
     static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("O tumulo dos Vagalumes");
-        meuFilme.setAnoDeLancamento(1988);
+        Filme meuFilme = new Filme("O tumulo dos vagalumes", 1988);
+       // meuFilme.setNome("O tumulo dos Vagalumes"); - não é necessário mais por causa do constructor Filme
+       // meuFilme.setAnoDeLancamento(1988);
         meuFilme.setDuracaoMin(89);
         System.out.println("Duração do filme: " + meuFilme.getDuracaoMin());
 
@@ -21,18 +23,18 @@ public class Principal {
         System.out.println("Total de Avaliações: " + meuFilme.getQtdAvaliacoes());
         System.out.println("Media das Avaliações: " + meuFilme.mediaDasAvaliacoes());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost", 2000);
+        // lost.setNome("Lost");
+        // lost.setAnoDeLancamento(2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpPorTemporada(10);
         lost.setMinPorEp(50);
         System.out.println("Duração para maratonar Lost: " + lost.getDuracaoMin());
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
+        Filme outroFilme = new Filme("Avatar", 2023);
+        // outroFilme.setNome("Avatar");
+        // outroFilme.setAnoDeLancamento(2023);
         outroFilme.setDuracaoMin(200);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -50,10 +52,10 @@ public class Principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-        Filme filmeDaMari = new Filme();
+        Filme filmeDaMari = new Filme("Guerreiras do Kpop", 2024);
         filmeDaMari.setDuracaoMin(150);
-        filmeDaMari.setNome("Guerreiras do Kpop");
-        filmeDaMari.setAnoDeLancamento(2024);
+        //filmeDaMari.setNome("Guerreiras do Kpop");
+        // filmeDaMari.setAnoDeLancamento(2024);
         filmeDaMari.avalia(10);
 
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
