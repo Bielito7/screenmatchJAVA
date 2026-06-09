@@ -47,4 +47,9 @@ public class Serie extends Titulo{
     public int getDuracaoMin() {
         return temporadas * epPorTemporada * minPorEp;
     }
+
+    @Override
+    public String toString() {
+        return "Serie: " + this.getNome() + "(" + getAnoDeLancamento() + ")";
+    }
 }
